@@ -1,0 +1,7 @@
+import { ArrowUpRight } from "lucide-react";
+import { BrandMark } from "./brand";
+import { SectionLabel } from "./section-heading";
+
+export function Vision() {
+  return <section className="section container vision" id="vision"><div className="vision-art" aria-hidden="true"><div className="vision-orbit orbit-one"/><div className="vision-orbit orbit-two"/><div className="vision-orbit orbit-three"/><div className="vision-mark"><BrandMark/></div><span className="vision-art-label">LESS FRICTION. MORE POSSIBILITY.</span><span className="vision-art-corner">R / VISION 01</span></div><div className="vision-copy"><SectionLabel number="06">WHY ROUTARA</SectionLabel><h2>Making cross-chain activity<br/><span>feel like one experience.</span></h2><p>Blockchain innovation has created a growing ecosystem of networks, assets, and applications. But moving between them can still require users to understand too many separate tools and processes.</p><p>ROUTARA is being built to reduce that complexity. Our goal is to make cross-chain execution more intuitive by focusing on what users want to accomplish and coordinating the supported steps needed to get there.</p><p className="vision-belief">We believe interacting across chains should become simpler, clearer, and more accessible.</p><a href="#early-access" className="text-link">Be part of what comes next <ArrowUpRight size={17}/></a></div></section>;
+}

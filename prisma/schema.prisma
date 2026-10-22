@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+}
+
+model EarlyAccess {
+  id             String   @id @default(cuid())
+  email          String   @unique
+  xUsername      String?
+  projectUpdates Boolean  @default(false)
+  privacyVersion String   @default("2026-10-21")
+  createdAt      DateTime @default(now())
+}
+
+model RateLimit {
+  key       String   @id
+  count     Int      @default(1)
+  expiresAt DateTime
+
+  @@index([expiresAt])
+}
