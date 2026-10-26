@@ -35,7 +35,8 @@ Visit **http://localhost:3000**. No credentials are needed to browse. Without da
 | `RATE_LIMIT_SECRET` | Random secret at least 32 characters long, used to hash rate-limit identifiers. |
 | `NEXT_PUBLIC_SITE_URL` | Exact canonical origin, e.g. `https://your-official-domain.com`. Used for same-origin submission checks, metadata, sitemap, and robots. Set at build time and runtime. |
 | `TRUSTED_IP_HEADER` | Optional header overwritten by your hosting proxy. On Vercel use `x-vercel-forwarded-for`. Never use a client-controlled header. Without it, rate limiting is per email only. |
-| `NEXT_PUBLIC_X_URL` | Optional verified official `https://x.com/username` link. No social account is fabricated when absent. |
+| `NEXT_PUBLIC_X_URL` | Optional verified official `https://x.com/username` link. Defaults to ROUTARA's official X account. |
+| `NEXT_PUBLIC_TELEGRAM_URL` | Optional verified official `https://t.me/channel` link. Defaults to ROUTARA's official Telegram community. |
 | `NEXT_PUBLIC_PRIVACY_EMAIL` | A monitored privacy contact; publish before accepting public registrations. |
 
 Generate a secret:
@@ -101,7 +102,7 @@ The site uses a custom SVG orbital routing concept, restrained animated route se
 ## Remaining external setup
 
 - Provision PostgreSQL and apply migrations to actually collect registrations.
-- Supply the canonical domain, secret, trusted proxy setting, official privacy contact, and optional verified social URL.
+- Supply the canonical domain, secret, trusted proxy setting, official privacy contact, and verify the official social URLs.
 - Confirm the official logo vector and legal operator details for a public launch.
 - Configure an email provider separately if sending updates is desired; registration storage is independent of email delivery.
 - Dependency audit: production dependencies have no reported vulnerabilities at delivery. The full audit reports a high-severity `braces` advisory through the Next.js ESLint tooling (5 affected development dependency entries). No fixed `braces` version was available in the registry; do not apply npm's suggested framework downgrade. This dependency processes local lint file patterns, not public signup input. Recheck upstream tooling updates before future releases.

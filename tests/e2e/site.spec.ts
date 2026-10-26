@@ -4,6 +4,8 @@ test("navigation, FAQ, legal pages, and layout", async ({ page }, testInfo) => {
   await page.goto("/");
   await expect(page).toHaveTitle("ROUTARA — Cross-Chain Execution, Reimagined");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("One Intent.Every Chain.Every Action.");
+  await expect(page.getByRole("contentinfo").getByRole("link", { name: "Follow on X" })).toHaveAttribute("href", "https://x.com/routarachain");
+  await expect(page.getByRole("contentinfo").getByRole("link", { name: "Join Telegram" })).toHaveAttribute("href", "https://t.me/routarachain");
   if (testInfo.project.name === "mobile") {
     const menu = page.locator(".menu-toggle");
     await menu.click();
