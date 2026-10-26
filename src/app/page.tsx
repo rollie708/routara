@@ -8,10 +8,13 @@ import { EarlyAccess } from "@/components/early-access";
 import { FAQ } from "@/components/faq";
 import { FinalCTA } from "@/components/footer";
 import { isSignupConfigured } from "@/lib/db";
+import { getLaunchCountdown, isLaunchActive } from "@/lib/launch";
+import { LaunchSection } from "@/components/launch-section";
 
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 export default function Home() {
-  return <main id="main"><Hero/><Problem/><Solution/><Workflow/><Differentiators/><Roadmap/><Vision/><EarlyAccess configured={isSignupConfigured()}/><FAQ/><FinalCTA/></main>;
+  const launched = isLaunchActive();
+  return <main id="main"><Hero initialLaunched={launched}/><LaunchSection initialLaunched={launched} initialCountdown={getLaunchCountdown()}/><Problem/><Solution/><Workflow/><Differentiators/><Roadmap/><Vision/><EarlyAccess configured={isSignupConfigured()}/><FAQ/><FinalCTA initialLaunched={launched}/></main>;
 }

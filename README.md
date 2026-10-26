@@ -1,6 +1,6 @@
 # ROUTARA — Official project website
 
-A responsive, custom-designed Next.js App Router website for ROUTARA, a cross-chain execution platform **in development**. This is the informational website, not an execution application.
+A responsive, custom-designed Next.js App Router website for ROUTARA, a cross-chain execution platform with an official launch state scheduled for October 26, 2026 at 15:00 UTC. Execution access remains clearly marked unavailable until real integrations are connected.
 
 ## Stack
 
@@ -35,7 +35,7 @@ Visit **http://localhost:3000**. No credentials are needed to browse. Without da
 | `RATE_LIMIT_SECRET` | Random secret at least 32 characters long, used to hash rate-limit identifiers. |
 | `NEXT_PUBLIC_SITE_URL` | Exact canonical origin, e.g. `https://your-official-domain.com`. Used for same-origin submission checks, metadata, sitemap, and robots. Set at build time and runtime. |
 | `TRUSTED_IP_HEADER` | Optional header overwritten by your hosting proxy. On Vercel use `x-vercel-forwarded-for`. Never use a client-controlled header. Without it, rate limiting is per email only. |
-| `NEXT_PUBLIC_X_URL` | Optional verified official `https://x.com/username` link. Defaults to ROUTARA's official X account. |
+| `NEXT_PUBLIC_X_URL` | Optional verified official X link. Defaults to ROUTARA's official X account. |
 | `NEXT_PUBLIC_TELEGRAM_URL` | Optional verified official `https://t.me/channel` link. Defaults to ROUTARA's official Telegram community. |
 | `NEXT_PUBLIC_PRIVACY_EMAIL` | A monitored privacy contact; publish before accepting public registrations. |
 
@@ -97,7 +97,7 @@ public/routara-symbol.svg Scalable symbol/favicon rendition
 
 The supplied raster reference was present in the request but not as a local source asset. `BrandMark` and the public favicon are a hand-traced SVG rendition of its interwoven geometric symbol. Replace both with an official production vector when supplied. No unrelated logo or invented account is used.
 
-The site uses a custom SVG orbital routing concept, restrained animated route segments, native accessible FAQ disclosures, mobile navigation with Escape support, skip navigation, and reduced-motion overrides. Network names are explicitly planned. There are no fabricated metrics, partners, dashboards, wallet connections, or live execution claims.
+The site uses a custom SVG orbital routing concept, a UTC launch countdown, restrained animated route segments, native accessible FAQ disclosures, mobile navigation with Escape support, skip navigation, and reduced-motion overrides. Network names are explicitly planned until verified. There are no fabricated metrics, partners, balances, wallet connections, or live execution claims.
 
 ## Remaining external setup
 

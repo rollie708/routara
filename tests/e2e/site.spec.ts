@@ -4,7 +4,7 @@ test("navigation, FAQ, legal pages, and layout", async ({ page }, testInfo) => {
   await page.goto("/");
   await expect(page).toHaveTitle("ROUTARA — Cross-Chain Execution, Reimagined");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("One Intent.Every Chain.Every Action.");
-  await expect(page.getByRole("contentinfo").getByRole("link", { name: "Follow on X" })).toHaveAttribute("href", "https://x.com/routarachain");
+  await expect(page.getByRole("contentinfo").getByRole("link", { name: "Follow on X" })).toHaveAttribute("href", "https://x.com/routarachain?s=11");
   await expect(page.getByRole("contentinfo").getByRole("link", { name: "Join Telegram" })).toHaveAttribute("href", "https://t.me/routarachain");
   if (testInfo.project.name === "mobile") {
     const menu = page.locator(".menu-toggle");
@@ -18,7 +18,7 @@ test("navigation, FAQ, legal pages, and layout", async ({ page }, testInfo) => {
     await expect(page).toHaveURL(/#vision$/);
   }
   await page.locator("summary").filter({ hasText: "Is ROUTARA live?" }).click();
-  await expect(page.locator("details[open]")).toContainText("Not yet.");
+  await expect(page.locator("details[open]")).toContainText("Execution access remains unavailable");
   await page.locator("summary").filter({ hasText: "Is early access free?" }).click();
   await expect(page.locator("details[open]")).toHaveCount(1);
   await expect(page.locator("details[open]")).toContainText("does not guarantee");

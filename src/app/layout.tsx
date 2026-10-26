@@ -5,6 +5,7 @@ import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { siteUrl } from "@/lib/site";
+import { isLaunchActive } from "@/lib/launch";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -18,5 +19,5 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { themeColor: "#080d15", colorScheme: "dark" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body><a className="skip-link" href="#main">Skip to content</a><Navigation/>{children}<Footer/></body></html>;
+  return <html lang="en"><body><a className="skip-link" href="#main">Skip to content</a><Navigation/>{children}<Footer initialLaunched={isLaunchActive()}/></body></html>;
 }
